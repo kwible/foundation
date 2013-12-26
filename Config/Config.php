@@ -21,10 +21,9 @@ class Config
 
 	public static function get($resource)
 	{
-		foreach (self::$resources as $configSubitem)
+		foreach (self::$resources as $configCollection)
 		{
-			foreach ($configSubitem as $configItemName => $configItem)
-			{
+			foreach ($configCollection as $configItemName => $configItem) {
 				if ($resource == $configItemName)
 				{
 					return $configItem;
@@ -34,7 +33,7 @@ class Config
 
 		throw new \Exception("Resource " . $resource . " does not exists. Have you imported the file using import()?");
 	}
-	
+
 	public static function gets(array $resources = array())
 	{
 
