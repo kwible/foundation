@@ -46,6 +46,18 @@ class Registry
 		return self::$items;
 	}
 
+<<<<<<< HEAD
+=======
+	/**public static function getSpecified(array $specifiedKeys = array())
+	{
+		$values = array();
+
+		$values = array_keys(self::getAll(), $specifiedKeys);
+
+		print_r($values);
+	}**/
+
+>>>>>>> 67f38b5d7ca6afeae7b4a6f41160c8cca4fda232
 	public static function update($key, $toValue)
 	{
 		if (self::exists($key))
