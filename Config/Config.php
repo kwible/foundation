@@ -21,7 +21,6 @@ class Config
 
 	public static function get($resource)
 	{
-<<<<<<< HEAD
 		foreach (self::$resources as $configCollection)
 		{
 			foreach ($configCollection as $configItemName => $configItem) {
@@ -29,13 +28,11 @@ class Config
 				{
 					return $configItem;
 				}
-=======
 		foreach (self::$resources as $configResource)
 		{
 			if (in_array($resource, $configResource))
 			{
 				return $configResource[$resource];
->>>>>>> 67f38b5d7ca6afeae7b4a6f41160c8cca4fda232
 			}
 		}
 
