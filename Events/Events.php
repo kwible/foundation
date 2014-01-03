@@ -21,7 +21,6 @@ class Events
 
 	public static function trigger($eventTitle)
 	{
-<<<<<<< HEAD
 		if (self::exists($eventTitle))
 		{
 			$event = self::$events[$eventTitle];
@@ -30,29 +29,25 @@ class Events
 			{
 				return $event();
 			} else {
-=======
-		if (isset(self::$events[$eventTitle]))
-		{
-			$event = self::$events[$eventTitle];
+				if (isset(self::$events[$eventTitle]))
+				{
+					$event = self::$events[$eventTitle];
 
-			if (is_object($event))
-			{
-				return $event();
+					if (is_object($event))
+					{
+						return $event();
+					} else {
+						return $event();
+					}
+				} else {
+					throw new \Exception("Events: Failed to find event, called '" . $eventTitle . "'!");
 
-			} else {
-				
-				// Call as a anomynous function
->>>>>>> 67f38b5d7ca6afeae7b4a6f41160c8cca4fda232
-				return $event();
+					return false;
+				}
 			}
-		} else {
-			throw new \Exception("Events: Failed to find event, called '" . $eventTitle . "'!");
-
-			return false;
 		}
 	}
-
-<<<<<<< HEAD
+	
 	public static function exists($eventTitle)
 	{
 		if (isset(self::$events[$eventTitle]))
@@ -63,8 +58,6 @@ class Events
 		}
 	}
 
-=======
->>>>>>> 67f38b5d7ca6afeae7b4a6f41160c8cca4fda232
 	public function showEvents()
 	{
 		print_r(self::$events);
